@@ -1,9 +1,11 @@
 server:
   port: 8765
+  
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+      
 spring:
   cloud:
     gateway:
@@ -29,6 +31,7 @@ spring:
         # descoberta. Portanto, se você chamar um endereço como http://localhost:8060/book-servie/**, a 
         # carga será automaticamente balanceada entre todas as instâncias registradas do book-service. 
         - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs # Rescreve o caminho /v3/api-docs/{SERVICE_NAME} como /{SERVICE_NAME}/v3/api-docs,
+
 management:
   tracing:
     sampling:
